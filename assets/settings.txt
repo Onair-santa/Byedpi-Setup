@@ -39,4 +39,4 @@
 -Kt,h -s8+h -d10+hn -f-1 --md5sig -Asn -Ku -a5 -An
 -Kt,h -s5 -d10+sh -f-1 --md5sig -Asn -Ku -a5 -An
 -Kt,h -s4 -q6+n -f-1 --md5sig -Asn -Ku -a5 -An
--Kt,h -s4 -q6+n -f-1 --md5sig -Asn -Ku -a5 -An -E
+-E -Kt,h -s4 -q6+n -f-1 --md5sig -Asn -Ku -a5 -An
