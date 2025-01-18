@@ -39,4 +39,8 @@
 -Kt,h -s8+h -d10+hn -f-1 --md5sig -Asn -Ku -a5 -An
 -Kt,h -s5 -d10+sh -f-1 --md5sig -Asn -Ku -a5 -An
 -Kt,h -s4 -q6+n -f-1 --md5sig -Asn -Ku -a5 -An
--E -Kt,h -s4 -q6+n -f-1 --md5sig -Asn -Ku -a5 -An
+-Kt,h -d1 -s0+s -d3+s -s6+s -d9+s -s12+s -d15+s -s20+s -d25+s -s30+s -An -Ku -a5 -An
+-Kt,h -s1 --md5sig -b661 -An -Ku -a5 -An
+-Kt,h -s5 -d10+sh --md5sig -Asn -Ku -a5 -An
+-Kt,h -s1 --md5sig -b661 -An -Ku -a5 -An
+-Kt,h -d1 -f-1 --tls-sni=rutube.ru -An -Ku -a5 -An
