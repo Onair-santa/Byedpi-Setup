@@ -44,3 +44,4 @@
 -Kt,h -s5 -d10+sh --md5sig -Asn -Ku -a5 -An
 -Kt,h -s1 --md5sig -b661 -An -Ku -a5 -An
 -Kt,h -d1 -f-1 --tls-sni=rutube.ru -An -Ku -a5 -An
+-Kt,h -s9 -f-5 --tls-sni=rutube.ru -An -Ku -a5 -An
