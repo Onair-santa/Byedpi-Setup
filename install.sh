@@ -206,7 +206,12 @@ fetch_configuration_lists() {
     else
         log red "Файл settings.txt не найден"
     fi
-
+    if [[ -f settings_kzrb.txt ]]; then
+        log green "Файл settings_kzrb.txt существует"
+        log green "Количество настроек: $(wc -l < settings_kzrb.txt)"
+    else
+        log red "Файл settings_kzrb.txt не найден"
+    fi
     log yellow "Проверка файла links.txt:"
     if [[ -f links.txt ]]; then
         log green "Файл links.txt существует"
@@ -224,12 +229,12 @@ fetch_configuration_lists() {
 # Интерактивный выбор порта
 select_port() {
     local port
-    read -p "Введите порт для Byedpi (по умолчанию 14228): " port
-    port=${port:-14228}
+    read -p "Введите порт для Byedpi (по умолчанию 20000): " port
+    port=${port:-20000}
 
     if [[ ! "$port" =~ ^[0-9]+$ || "$port" -lt 1024 || "$port" -gt 65535 ]]; then
-        log red "Некорректный порт. Используется порт по умолчанию: 14228"
-        port=14228
+        log red "Некорректный порт. Используется порт по умолчанию: 20000"
+        port=20000
     fi
 
     echo "$port"
