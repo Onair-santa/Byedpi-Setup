@@ -479,7 +479,6 @@ EOF
     # Добавление текста
     echo -e "\e[36m"
     echo "Byedpi-Setup"
-    echo "github.com/fatyzzz/Byedpi-Setup"
     echo -e "\e[0m"
     sleep 2
     check_dependencies
@@ -506,6 +505,7 @@ EOF
     log yellow "1 - Установка ByeDPI"
     log yellow "2 - Только тестирование конфигурации"
     log yellow "3 - Поменять порт у службы: "
+    log yellow "4 - Установка + конфигурация для КЗ"
     read selector
 
     case "$selector" in
@@ -638,7 +638,7 @@ EOF
         log yellow "Айпи: 127.0.0.1"
         log yellow "Порт: $port"
     else
-        log green "t.me/fatyzzz"
+        log green "Bye-Bye DPI"
     fi
 
     # Очистка временных файлов
