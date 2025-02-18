@@ -206,12 +206,6 @@ fetch_configuration_lists() {
     else
         log red "Файл settings.txt не найден"
     fi
-    if [[ -f settings_kzrb.txt ]]; then
-        log green "Файл settings_kzrb.txt существует"
-        log green "Количество настроек: $(wc -l < settings_kzrb.txt)"
-    else
-        log red "Файл settings_kzrb.txt не найден"
-    fi
     log yellow "Проверка файла links.txt:"
     if [[ -f links.txt ]]; then
         log green "Файл links.txt существует"
