@@ -1,5 +1,4 @@
 -Kt,h -s5 -d10+sh --md5sig -Asn -Ku -a5 -An
--Kt,h -s1 --md5sig -b661 -An -Ku -a5 -An
 -Kt,h -s8+h -d10+hn -f-1 --md5sig -Asn -Ku -a5 -An
 -Kt,h -n www.google.com -d 1+s -O 1 -s 25+s -t 5 -An -Ku -a5 -An
 -Kt,h -d 1+s -O 1 -s 25+s -t 5 -An -Ku -a5 -An
