@@ -340,7 +340,7 @@ After=network-online.target nss-lookup.target
 
 [Service]
 EnvironmentFile=%h/.config/byedpitest.conf
-ExecStart=%h/ciadpi/ciadpi-core --ip 127.0.0.1 --port \$SEL_PORT \$SEL_SETTINGS
+ExecStart=%h/ciadpi/ciadpi-core --ip 127.0.0.1 --port $SEL_PORT $SEL_SETTINGS
 Restart=on-failure
 RestartSec=5s
 
