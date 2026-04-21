@@ -6,7 +6,7 @@ readonly LOG_FILE="/tmp/${SCRIPT_NAME}.log"
 readonly CONFIG_FILE="$HOME/.config/systemd/user/config.conf"
 readonly BYEDPI_DIR="$HOME/ciadpi"
 readonly TEMP_DIR=$(mktemp -d)
-readonly setup_repo="https://ghfast.top/https://github.com/Onair-santa/Byedpi-Setup/archive/refs/heads/main.zip"
+readonly setup_repo="https://ghfast.top/https://github.com/fatyzzz/Byedpi-Setup/archive/refs/heads/main.zip"
 
 # Цвета для логирования
 readonly COLOR_GREEN='\e[32m'
@@ -206,6 +206,7 @@ fetch_configuration_lists() {
     else
         log red "Файл settings.txt не найден"
     fi
+
     log yellow "Проверка файла links.txt:"
     if [[ -f links.txt ]]; then
         log green "Файл links.txt существует"
@@ -223,12 +224,12 @@ fetch_configuration_lists() {
 # Интерактивный выбор порта
 select_port() {
     local port
-    read -p "Введите порт для Byedpi (по умолчанию 20000): " port
-    port=${port:-20000}
+    read -p "Введите порт для Byedpi (по умолчанию 14228): " port
+    port=${port:-14228}
 
     if [[ ! "$port" =~ ^[0-9]+$ || "$port" -lt 1024 || "$port" -gt 65535 ]]; then
-        log red "Некорректный порт. Используется порт по умолчанию: 20000"
-        port=20000
+        log red "Некорректный порт. Используется порт по умолчанию: 14228"
+        port=14228
     fi
 
     echo "$port"
@@ -268,7 +269,7 @@ SEL_PORT="$port"
 SEL_SETTINGS="$setting"
 EOF
 
-    cat > "$HOME/.config/systemd/user/ciadpi.service" << 'EOF'
+    cat > "$HOME/.config/systemd/user/ciadpi.service" <<EOF
 [Unit]
 Description=ByeDPI Proxy Service
 Documentation=https://github.com/fatyzzz/Byedpi-Setup
@@ -331,7 +332,7 @@ test_configurations() {
 SEL_PORT="$port_test"
 SEL_SETTINGS="$setting"
 EOF
-        cat > "$HOME/.config/systemd/user/ciadpitest.service" << 'EOF'
+        cat > "$HOME/.config/systemd/user/ciadpitest.service" <<EOF
 [Unit]
 Description=ByeDPI Proxy Service
 Documentation=https://github.com/fatyzzz/Byedpi-Setup
@@ -340,7 +341,7 @@ After=network-online.target nss-lookup.target
 
 [Service]
 EnvironmentFile=%h/.config/byedpitest.conf
-ExecStart=%h/ciadpi/ciadpi-core --ip 127.0.0.1 --port $SEL_PORT $SEL_SETTINGS
+ExecStart=%h/ciadpi/ciadpi-core --ip 127.0.0.1 --port \$SEL_PORT \$SEL_SETTINGS
 Restart=on-failure
 RestartSec=5s
 
@@ -473,6 +474,7 @@ EOF
     # Добавление текста
     echo -e "\e[36m"
     echo "Byedpi-Setup"
+    echo "github.com/fatyzzz/Byedpi-Setup"
     echo -e "\e[0m"
     sleep 2
     check_dependencies
@@ -499,7 +501,6 @@ EOF
     log yellow "1 - Установка ByeDPI"
     log yellow "2 - Только тестирование конфигурации"
     log yellow "3 - Поменять порт у службы: "
-    log yellow "4 - Установка + конфигурация для КЗ"
     read selector
 
     case "$selector" in
@@ -632,7 +633,7 @@ EOF
         log yellow "Айпи: 127.0.0.1"
         log yellow "Порт: $port"
     else
-        log green "Bye-Bye DPI"
+        log green "t.me/fatyzzz"
     fi
 
     # Очистка временных файлов
