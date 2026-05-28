@@ -6,7 +6,7 @@ readonly LOG_FILE="/tmp/${SCRIPT_NAME}.log"
 readonly CONFIG_FILE="$HOME/.config/systemd/user/config.conf"
 readonly BYEDPI_DIR="$HOME/ciadpi"
 readonly TEMP_DIR=$(mktemp -d)
-readonly setup_repo="https://ghfast.top/https://github.com/Onair-santa/Byedpi-Setup/archive/refs/heads/main.zip"
+readonly setup_repo="https://github.com/Onair-santa/Byedpi-Setup/archive/refs/heads/main.zip"
 
 # Цвета для логирования
 readonly COLOR_GREEN='\e[32m'
@@ -168,7 +168,7 @@ safe_download() {
 
 # Компиляция и установка ByeDPI
 install_byedpi() {
-    local repo_url="https://ghfast.top/https://github.com/hufrea/byedpi/archive/refs/heads/main.zip"
+    local repo_url="https://github.com/hufrea/byedpi/archive/refs/heads/main.zip"
     local zip_file="$TEMP_DIR/byedpi-main.zip"
 
     safe_download "$repo_url" "$zip_file"
